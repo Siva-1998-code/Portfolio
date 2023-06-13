@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+ .containe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+ }
+
+ .contant h1 , p{
+    display: block;
+ }
+
+.contant h1{
+    color: rgb(253, 142, 161);
+    font-size: 3.5rem;
+    font-weight: 700;
+}
