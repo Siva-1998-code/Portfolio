@@ -1,0 +1,422 @@
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+$indigo: #004169;
+
+$roboto: "Roboto", sans-serif;
+$raleway: "Raleway", sans-serif;
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  color: black;
+  font-size: 24px;
+
+  font-family: $raleway;
+  background-color: white;
+}
+.wrapper {
+  @include flexCenter(column);
+}
+
+.navigation {
+  @include flexCenter(row);
+  width: 96%;
+  justify-content: space-between;
+  min-height: 125px;
+}
+.navigation__logo {
+  color: $indigo;
+}
+.navigation__links {
+  display: flex;
+  flex-direction: row;
+  li {
+    padding: 1rem;
+  }
+}
+.burger {
+  display: none;
+}
+.primary-button {
+  text-decoration: none;
+  border: solid $indigo;
+  border-radius: 100px;
+  font-size: 18px;
+  font-weight: 900;
+  padding: 1rem;
+  color: $indigo;
+  transition: 0.5s ease-out;
+  &:visited {
+    color: $indigo;
+    background-color: white;
+  }
+  &:hover {
+    color: white;
+    background-color: $indigo;
+  }
+}
+
+.hero {
+  @include flexCenter(row);
+  width: 100%;
+  justify-content: space-around;
+  min-height: 600px;
+}
+.hero__img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.introduction {
+  padding: 0.5rem;
+  font-size: 40px;
+}
+
+.introduction--1 {
+  font-family: $roboto;
+  font-weight: 300;
+}
+.introduction--2 {
+  font-weight: 900;
+}
+.introduction--3 {
+  font-family: $roboto;
+  font-weight: 300;
+  background-color: $indigo;
+  color: white;
+}
+
+.skills {
+  background-color: $indigo;
+  width: 100%;
+  text-align: center;
+  color: white;
+  min-height: 350px;
+  @include flexCenter(column);
+  justify-content: flex-start;
+}
+.main-header {
+  padding: 1.5rem;
+  font-size: 40px;
+  font-weight: 600;
+}
+.main-paragraph {
+  width: 90%;
+  line-height: 1.5rem;
+  font-family: $roboto;
+}
+.skills__boxes {
+  @include flexCenter(row);
+  justify-content: center;
+  align-items: flex-start;
+  width: 80%;
+  text-align: center;
+  margin-top: -8rem;
+  background-color: white;
+  border-radius: 20px;
+  border: 0.01rem solid lightgrey;
+}
+.skills__box {
+  @include flexCenter(column);
+  justify-content: flex-start;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+  padding: 2rem;
+  min-height: 450px;
+  ul {
+    width: 100%;
+    li,
+    h2 {
+      padding: 0.3rem;
+    }
+    h2 {
+      font-weight: 600;
+      color: $indigo;
+      margin-bottom: 0.3rem;
+    }
+    li {
+      font-family: $roboto;
+    }
+  }
+}
+.programs-and-tools {
+  border-left: 0.01rem solid lightgray;
+  border-right: 0.01rem solid lightgray;
+}
+.other-technologies-header {
+  margin-top: 2rem;
+}
+
+.work {
+  text-align: center;
+  margin-top: 1rem;
+  justify-content: center;
+  h1,
+  p {
+    padding: 1rem;
+  }
+  h1 {
+    font-size: 40px;
+  }
+}
+.main-introduction {
+  background-color: $indigo;
+  color: white;
+  @include flexCenter(column);
+}
+.main-paragraph {
+  min-height: 100px;
+}
+.projects {
+  @include flexCenter(row);
+  justify-content: space-around;
+  width: 100%;
+}
+.project {
+  width: 100%;
+  margin: 2rem;
+  @include flexCenter(row);
+  position: relative;
+  transition: 0.5s ease;
+  &:hover {
+    opacity: 1;
+  }
+}
+.project-image {
+  display: block;
+  background-size: contain;
+  width: 100%;
+  border-radius: 15px;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: black;
+  border-radius: 15px;
+}
+
+.project:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  position: absolute;
+  color: white;
+  transform: translate(-50%, -50%);
+  min-width: 150px;
+  border: white solid;
+  &:hover {
+    cursor: pointer;
+    border: $indigo solid;
+  }
+  &:visited {
+    color: white;
+  }
+}
+.project-description {
+  position: absolute;
+  border-radius: 15px;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+  transform: translate(-50%, -50%);
+  min-width: 150px;
+  top: 30%;
+  left: 50%;
+  border: solid white;
+  font-family: $roboto;
+}
+.text--1 {
+  top: 70%;
+  left: 30%;
+}
+.text--2 {
+  top: 70%;
+  left: 70%;
+}
+
+.footer {
+  @include flexCenter(column);
+  justify-content: space-around;
+  width: 100%;
+  min-height: 100px;
+  background-color: $indigo;
+  padding-bottom: 1rem;
+  font-size: 16px;
+  color: white;
+}
+.footer__social {
+  width: 20%;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 2rem;
+  a {
+    color: white;
+  }
+}
+.social-media-icon {
+  border: solid white;
+  padding: 1rem;
+  border-radius: 50%;
+  transition: 0.5s ease;
+  &:hover {
+    cursor: pointer;
+    color: $indigo;
+    background-color: white;
+  }
+}
+
+@media screen and (max-width: 1340px) {
+  .skills__box {
+    min-height: 550px;
+  }
+  .hero {
+    flex-direction: column;
+  }
+  .hero__description {
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 1120px) {
+  .footer__social {
+    min-width: 300px;
+  }
+  .small-button {
+    font-size: 12px;
+    padding: 0.4rem;
+  }
+  .project-description {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+  .text {
+    min-width: 100px;
+  }
+  .text--1 {
+    top: 80%;
+    left: 28%;
+  }
+  .text--2 {
+    top: 80%;
+    left: 76%;
+  }
+}
+@media screen and (max-width: 840px) {
+  .hero__description {
+    margin-bottom: 0rem;
+  }
+  .skills__boxes {
+    @include flexCenter(column);
+    margin-top: 1rem;
+  }
+  .skills__box {
+    @include flexCenter(column);
+    padding-right: 0rem;
+    padding-left: 0rem;
+    min-height: 440px;
+    width: 100%;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+  .programs-and-tools {
+    border-top: 0.01rem solid lightgray;
+    min-height: 340px;
+  }
+  .other-skills {
+    min-height: 100px;
+    border-top: 0.01rem solid lightgray;
+  }
+  .projects {
+    @include flexCenter(column);
+    .project {
+      width: 90%;
+    }
+  }
+  .small-button {
+    font-size: 18px;
+    padding: 1rem;
+  }
+  .project-description {
+    font-size: 18px;
+    top: 35%;
+  }
+  .text {
+    min-width: 150px;
+  }
+  .text--1 {
+    top: 80%;
+    left: 28%;
+  }
+  .text--2 {
+    top: 80%;
+    left: 76%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .wrapper {
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+  }
+  .navigation__links {
+    position: absolute;
+    right: 5%;
+    height: 16rem;
+    top: 6rem;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 90%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: white;
+    border-radius: 15px;
+    border: 0.01rem solid lightgrey;
+    transform: translateX(120%);
+    z-index: 1;
+  }
+  .burger {
+    display: block;
+    cursor: pointer;
+  }
+  .nav-active {
+    transform: translateX(0%);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .project-description {
+    font-size: 12px;
+
+    padding: 8px 16px;
+  }
+  .text {
+    min-width: 100px;
+    font-size: 12px;
+    padding: 0.5rem;
+  }
+  .introduction {
+    font-size: 30px;
+  }
+}
